@@ -1,12 +1,17 @@
-# Chinook Music Store — SQL Portfolio Project
+# Chinook SQL Portfolio
 
-A comprehensive SQL portfolio demonstrating data analysis and business intelligence skills using the **Chinook Database**. This project covers 60 progressively complex SQL queries, ranging from basic data retrieval to advanced analytical techniques using Window Functions and Common Table Expressions (CTEs).
+A SQL practice project based on the Chinook sample database. 
 
-## 📊 Database Overview
+The goal of this repository is to show how I work with a real relational database using SQL:
+- filtering and sorting data
+- grouping and aggregating results
+- joining multiple tables
+- writing subqueries and CTEs
+- using window functions for rankings and running totals
 
-The Chinook database represents a digital media store, including tables for artists, albums, tracks, invoices, and customers. It mimics real-world e-commerce data patterns.
+## Dataset
 
-### Entity Relationship Diagram (ERD)
+This project uses the Chinook database, a sample digital media store. To help visualize the structure, here is the Entity Relationship Diagram (ERD):
 
 ```mermaid
 erDiagram
@@ -23,40 +28,28 @@ erDiagram
     Employee ||--o{ Employee : "reports to"
 ```
 
-## 📂 Project Structure
+## What’s inside
 
-- `queries/`
-  - `01_basic_queries.sql`: Foundational SELECT, WHERE, LIKE, ORDER BY.
-  - `02_aggregations.sql`: GROUP BY, HAVING, and aggregate functions (SUM, AVG, COUNT).
-  - `03_joins.sql`: Inner, Left, and Self-joins across multiple tables.
-  - `04_subqueries.sql`: Scalar, Correlated, and EXISTS subqueries.
-  - `05_window_functions.sql`: RANK, ROW_NUMBER, LAG/LEAD, and running totals.
-  - `06_advanced_analysis.sql`: CTEs, Recursive CTEs, Market Basket Analysis, and business KPIs.
-- `schema.sql`: Annotated database schema and documentation.
-- `Chinook_Sqlite.sqlite`: The SQLite database file used for all queries.
+The repository is organized into query sets by topic:
 
-## 🚀 Skills Demonstrated
+- `01_basic_queries.sql` — SELECT, WHERE, ORDER BY, LIKE  
+- `02_aggregations.sql` — COUNT, SUM, AVG, GROUP BY, HAVING  
+- `03_joins.sql` — INNER JOIN, LEFT JOIN, multi-table joins  
+- `04_subqueries.sql` — scalar, correlated, EXISTS queries  
+- `05_window_functions.sql` — RANK, ROW_NUMBER, LAG/LEAD, running totals  
+- `06_advanced_analysis.sql` — CTEs, recursive CTEs, KPI-style analysis  
 
-- **Data Retrieval**: Efficiently querying large datasets with filters and sorting.
-- **Aggregations**: Summarizing data to extract business insights (e.g., total revenue, average order value).
-- **Relational Logic**: Connecting disparate data points via complex JOIN structures.
-- **Window Functions**: Performing sophisticated calculations across sets of rows (rankings, running totals).
-- **Business Intelligence**: Using CTEs and CASE statements for customer segmentation, cohort analysis, and trend reporting.
-- **Schema Design & Documentation**: Deep understanding of relational database constraints and documentation.
+## Why this project
 
-## 🛠️ How to Run
+I built this repository to practice SQL in a way that feels closer to real business analysis than isolated toy exercises. Chinook is a good dataset for that because it has customers, orders, products, and sales data all connected through a clean relational model.
 
-Requirements: `sqlite3`
+## How to run
 
-1. Clone this repository.
-2. Run any query file using the SQLite CLI:
-   ```bash
-   sqlite3 Chinook_Sqlite.sqlite < queries/01_basic_queries.sql
-   ```
-3. To explore the schema:
-   ```bash
-   sqlite3 Chinook_Sqlite.sqlite ".schema"
-   ```
+You only need SQLite. To run any of the query sets, use:
+
+```bash
+sqlite3 Chinook_Sqlite.sqlite < queries/01_basic_queries.sql
+```
 
 ---
 *Created as part of a technical portfolio for SQL proficiency.*
